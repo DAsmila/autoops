@@ -134,4 +134,5 @@ autoops/
 * Self-Healing Systems
 * Observability & Monitoring
 * Infrastructure as Code
+<img width="1920" height="877" alt="image" src="https://github.com/user-attachments/assets/ce2d0c3c-ece4-4f72-a07f-89133b16d8a4" />
 
