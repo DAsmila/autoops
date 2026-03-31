@@ -146,4 +146,4 @@ autoops/
 * Observability & Monitoring
 * Infrastructure as Code
 
-
+## Monitoring: Prometheus + Grafana stack integrated
