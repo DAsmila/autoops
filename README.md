@@ -63,16 +63,6 @@ Code Push → CI/CD Pipeline → Docker Build → Deployment
 
 ---
 
-### Run Locally
-
-```bash
-git clone https://github.com/DAsmila/autoops.git
-cd autoops
-docker compose up -d
-```
-
----
-
 ## 🌐 Services
 
 | Service     | URL                                            |
@@ -81,7 +71,6 @@ docker compose up -d
 | Backend API | [http://localhost:5000](http://localhost:5000) |
 | Grafana     | [http://localhost:3001](http://localhost:3001) |
 | Prometheus  | [http://localhost:9090](http://localhost:9090) |
-| cAdvisor    | [http://localhost:8080](http://localhost:8080) |
 
 ---
 
