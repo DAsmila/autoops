@@ -1,0 +1,91 @@
+services:
+  frontend:
+    build: ./frontend
+    container_name: autoops-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - autoops-net
+
+  backend:
+    build: ./backend
+    container_name: autoops-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/autoops
+      - JWT_SECRET=autoops_super_secret_2024
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+    restart: unless-stopped
+    networks:
+      - autoops-net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  mongo:
+    image: mongo:6
+    container_name: autoops-mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+    networks:
+      - autoops-net
+
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: autoops-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+    networks:
+      - autoops-net
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: autoops-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=autoops123
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+    networks:
+      - autoops-net
+
+  node-exporter:
+    image: prom/node-exporter:v1.6.1
+    container_name: autoops-node-exporter
+    ports:
+      - "9100:9100"
+    restart: unless-stopped
+    networks:
+      - autoops-net
+
+volumes:
+  mongo-data:
+  grafana-data:
+
+networks:
+  autoops-net:
+    driver: bridge
