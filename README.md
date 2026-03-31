@@ -1,3 +1,14 @@
+<img width="1920" height="877" alt="image" src="https://github.com/user-attachments/assets/f1527096-54ba-424c-ba84-0994b8dadb75" />
+<img width="1920" height="879" alt="image" src="https://github.com/user-attachments/assets/d931107a-1759-4a33-9847-41077b06944d" />
+<img width="1920" height="866" alt="image" src="https://github.com/user-attachments/assets/859b2080-c00b-4c8c-a6e3-078e778bcf62" />
+<img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/f57c1c3f-3b76-4251-94d4-98d4c5c939da" />
+<img width="1920" height="876" alt="image" src="https://github.com/user-attachments/assets/7aec9c39-9d59-437e-8265-9931a1977504" />
+<img width="1920" height="880" alt="image" src="https://github.com/user-attachments/assets/94b83ae6-0505-4bdb-b778-33705198d2a5" />
+<img width="1920" height="884" alt="image" src="https://github.com/user-attachments/assets/41a02b42-5054-45d2-bfa7-da5b725f50f5" />
+<img width="1920" height="866" alt="image" src="https://github.com/user-attachments/assets/1aa96b32-596a-4dd1-8872-3b7396acd35d" />
+<img width="1920" height="894" alt="image" src="https://github.com/user-attachments/assets/70383a50-225c-4736-9fce-b0b81ae7860f" />
+<img width="1920" height="871" alt="image" src="https://github.com/user-attachments/assets/727b478c-9afe-4056-bdb3-00ab9171929f" />
+
 
 # 🚀 AutoOps — Self-Healing CI/CD DevOps Platform
 
@@ -134,5 +145,5 @@ autoops/
 * Self-Healing Systems
 * Observability & Monitoring
 * Infrastructure as Code
-<img width="1920" height="877" alt="image" src="https://github.com/user-attachments/assets/ce2d0c3c-ece4-4f72-a07f-89133b16d8a4" />
+
 
